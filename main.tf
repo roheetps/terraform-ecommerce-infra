@@ -16,7 +16,7 @@ provider "aws" {
 
 # 3. Resource Configuration
 resource "aws_s3_bucket" "product_assets" {
-  bucket = "${var.project_name}-${var.environment}-product-assets-roheet090689"
+  bucket = local.bucket_name
 
   tags = {
     Environment = var.environment
