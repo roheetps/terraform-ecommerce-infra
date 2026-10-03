@@ -12,5 +12,5 @@ output "current_region" {
 }
 output "VPC_id" {
   description = "ID of the VPC"
-  value       = aws_vpc.main.id 
-  }
+  value       = aws_vpc.main.id
+}
