@@ -1,0 +1,15 @@
+digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  "aws_iam_policy.product_assets_access" [label="aws_iam_policy.product_assets_access"];
+  "aws_instance.web" [label="aws_instance.web"];
+  "aws_s3_bucket.product_assets" [label="aws_s3_bucket.product_assets"];
+  "aws_security_group.web" [label="aws_security_group.web"];
+  "aws_subnet.public" [label="aws_subnet.public"];
+  "aws_vpc.main" [label="aws_vpc.main"];
+  "aws_iam_policy.product_assets_access" -> "aws_s3_bucket.product_assets";
+  "aws_instance.web" -> "aws_security_group.web";
+  "aws_instance.web" -> "aws_subnet.public";
+  "aws_security_group.web" -> "aws_vpc.main";
+  "aws_subnet.public" -> "aws_vpc.main";
+}
