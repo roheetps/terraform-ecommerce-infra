@@ -103,3 +103,9 @@ resource "aws_s3_bucket" "storage" {
   for_each = local.storage_requirements
   bucket   = "ecommerce-${var.environment}-${each.value}-roheet0906899"
 }
+
+
+data "aws_region" "current" {}
+data "aws_vpc" "selected" {
+  id = aws_vpc.main.id
+}

@@ -30,3 +30,6 @@ locals {
     "ecommerce-${var.environment}-${name}-roheet0906899"
   ]
 }
+locals {
+  current_region = data.aws_region.current.name
+}
